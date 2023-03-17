@@ -37,6 +37,7 @@
         $('.upload__inputfile').each(function() {
             $(this).on('change', function(e) {
                 imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap2');
+                $('.upload__img-wrap2').addClass('active');
                 console.log(imgWrap);
                 var maxLength = $(this).attr('data-max_length');
                 var files = e.target.files;
@@ -66,7 +67,7 @@
                             
                             var reader = new FileReader();
                             reader.onload = function(e) {
-                                var html = "<div class='upload__img-box col-sm-4'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'></div></div></div>";
+                                var html = "<div class='upload__img-box col-sm-4'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'><i class='fas fa-times'></i></div></div></div>";
                                 imgWrap.append(html);
                                 
                                 iterator++;
