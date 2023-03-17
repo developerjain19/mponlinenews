@@ -38,3 +38,24 @@
     text-align: center;
     margin-bottom: 0;
 }
+
+label span{
+    font-size: 12px;
+    color: #55606e;
+}
+
+.form-check-input.st_check{
+    position: static !important;
+    margin: 0 !important;
+}
+
+.form-check.checkflex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input_note{
+    font-size: 12px;
+    color: #55606e;
+}
