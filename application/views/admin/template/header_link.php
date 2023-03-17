@@ -21,5 +21,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/admin/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/admin/dist/css/custome-2.1.css">
+  <link rel="stylesheet" href="<?= base_url() ?>assets/admin/dist/css/tagsinput.css">
+  <link rel="stylesheet" href="<?= base_url() ?>assets/admin/plugins/summernote/summernote-bs4.min.css">
   <link rel="shortcut icon" href="<?= $favicon ?>" />
 </head>
