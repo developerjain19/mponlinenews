@@ -20,10 +20,6 @@ class Admin_Dashboard extends CI_Controller
         $this->load->view('admin/dashboard', $data);
     }
 
-  
-
-
-
     public function banner()
     {
 
