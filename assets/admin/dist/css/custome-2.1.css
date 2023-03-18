@@ -60,7 +60,7 @@ label span {
 	color: #55606e;
 }
 
-.upload__img-wrap2 {}
+
 
 .upload__img-wrap2.active {
 	overflow-y: scroll;
@@ -99,3 +99,22 @@ label span {
 	background-position: center;
 	background-repeat: no-repeat;
 }
+
+.upload__img-close {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    line-height: 24px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .upload__img-close:after {
+    content: "✖";
+    font-size: 14px;
+    color: white;
+  }

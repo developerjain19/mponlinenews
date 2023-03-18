@@ -58,7 +58,7 @@
                                         </div> -->
                                         <div class="form-group">
                                             <label>Tags</label>
-                                            <input type="text" name="tags" data-role="tagsinput">
+                                            <input type="text" name="tags[]" data-role="tagsinput">
                                             <span class="input_note">(Type tag and hit enter)</span>
                                         </div>
                                         <div class="form-group">
@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input myfile-input" id="readUrl">
+                                            <input type="file" name="image" class="custom-file-input myfile-input" id="readUrl">
                                             <label class="custom-file-label" for="readUrl">Choose file</label>
                                             <img class="image" src="http://via.placeholder.com/700x500" height="50">
                                         </div>
@@ -121,7 +121,7 @@
                                                 <div class="upload__btn-box">
                                                     <label class="upload__btn">
                                                         <p>Upload images</p>
-                                                        <input type="file" multiple="" data-max_length="20" class="upload__inputfile">
+                                                        <input type="file" name="moreimage[]" multiple="" data-max_length="20" class="upload__inputfile">
                                                     </label>
                                                 </div>
                                                 <div class="upload__img-wrap2"></div>
@@ -140,7 +140,7 @@
                                             <!-- <label for="customFile">Custom File</label> -->
 
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <input type="file" name="file_id" class="custom-file-input" id="customFile">
                                                 <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
                                         </div>
@@ -149,39 +149,37 @@
                                 <div class="card card-danger">
                                     <div class="card-header bg-white">
                                         <h3 class="card-title ">Category</h3><br>
-                                        <span class="input_note">Downloadable additional files (.pdf, .docx, .zip etc..)</span>
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label>Language</label>
-                                            <select class="form-control">
-                                                <option>English</option>
+                                            <select class="form-control" name="lang_id">
+                                                <option value="1">English</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Category</label>
-                                            <select class="form-control">
+                                            <select class="form-control" name="category_id" id="category_id">
                                                 <option value="">Select a category</option>
-                                                <option value="5">खेल</option>
-                                                <option value="10">टेक्नोलॉजी</option>
-                                                <option value="1">देश</option>
-                                                <option value="8">बिजनेस</option>
-                                                <option value="3">मध्य प्रदेश</option>
-                                                <option value="6">मनोरंजन</option>
-                                                <option value="7">राजनीति</option>
-                                                <option value="4">राज्य</option>
-                                                <option value="2">विदेश</option>
-                                                <option value="9">शिक्षा</option>
+                                                <?php
+                                                $i = 0;
+                                                if (!empty($categories)) {
+                                                    foreach ($categories as $row) {
+                                                ?>
+                                                        <option value=" <?= $row['id']; ?>"> <?= $row['name']; ?></option>
+                                                <?php
+                                                    }
+                                                }
+                                                ?>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label>Subcategory</label>
-                                            <select class="form-control">
+                                            <select class="form-control" name="subcategory_id" id="sub_category_id">
                                                 <option value="">Select a category</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <!-- /.card-body -->
                                 </div>
                                 <div class="card card-danger">
                                     <div class="card-header bg-white">
@@ -189,12 +187,25 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="form-check checkflex">
-                                            <label class="form-check-label" for="exampleCheck1">Show Only to Registered Users</label>
-                                            <input type="checkbox" class="form-check-input st_check" id="exampleCheck1" name="registerd_users">
+                                            <label class="form-check-label float-left" for="exampleCheck1">Scheduled Post</label>
+                                            <input type="checkbox" class="form-check-input st_check float-right" id="cb_scheduled" name="scheduled_post" value="1">
+                                        </div>
+                                        <div id="date_published_content" class="form-group" style="display:none">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <label>Date Published</label>
+                                                    <div class='input-group date' id='datetimepicker'>
+                                                        <input type='date' class="form-control" name="date_published" id="input_date_published" placeholder="Date Published" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="card-footer">
-                                            <button type="submit" class="btn btn-warning text-white">Save as Draft</button>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" name="status" value="0" class="btn btn-warning text-white">Save as Draft</button>
+                                            <button type="submit" name="status" value="1" class="btn btn-primary">Submit</button>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
@@ -207,8 +218,6 @@
                 </div>
             </section>
         </div>
-
-
         <?php $this->load->view('admin/template/footer_link'); ?>
 </body>
 

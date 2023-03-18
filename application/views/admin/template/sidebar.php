@@ -28,6 +28,22 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="<?= base_url('categories') ?>" class="nav-link">
+            <i class="nav-icon fas fa-table"></i>
+            <p>
+              Categories
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= base_url('subcategories') ?>" class="nav-link">
+            <i class="nav-icon fas fa-columns"></i>
+            <p>
+              Subcategories
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="<?= base_url('post-format') ?>" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
