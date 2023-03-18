@@ -25,6 +25,17 @@ if (!function_exists('strTrim')) {
 	}
 }
 
+function trans($string , $capitalizeFirstCharacter = false)
+{
+	$str = str_replace('_', ' ', $string);
+
+	if (!$capitalizeFirstCharacter) {
+		$str[0] = ucwords($str[0]);
+	}
+
+	return $str;
+}
+
 
 function removeForbiddenCharacters($str)
 {
@@ -398,7 +409,7 @@ function fullImage($imageName, $path)
 {
 	$ci = &get_instance();
 	$config['file_name'] = date('dm') . round(microtime(true) * 1000);
-	$config['allowed_types'] = 'jpg|png|jpeg';
+	$config['allowed_types'] = '';
 	$config['upload_path'] = $path;
 	$target_path = $path;
 	$config['remove_spaces'] = true;
@@ -415,9 +426,9 @@ function fullImage($imageName, $path)
 		$configi['source_image'] = $path;
 		$configi['new_image'] = $target_path;
 		$configi['maintain_ratio'] = TRUE;
-		$ci->load->library('image_lib');
-		$ci->image_lib->initialize($configi);
-		$ci->image_lib->resize();
+		// $ci->load->library('image_lib');
+		// $ci->image_lib->initialize($configi);
+		// $ci->image_lib->resize();
 		return $picture;
 	} else {
 		return false;

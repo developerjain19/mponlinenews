@@ -1,61 +1,120 @@
-.item
-{
-    width: 100%;
-    height: 215px;
-    background-color: #fff;
-    /* border: 1px solid #eee; */
-    padding: 20px;
-    margin-bottom: 10px;
-    overflow: hidden;
+.item {
+	width: 100%;
+	height: 215px;
+	background-color: #fff;
+	/* border: 1px solid #eee; */
+	padding: 20px;
+	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 .item-icon {
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-    border-radius: 100%;
-    margin: 0 auto;
-    position: relative;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	border-radius: 100%;
+	margin: 0 auto;
+	position: relative;
 }
 
 .item-icon svg {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    top: 20px;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	top: 20px;
 }
 
 .item .title {
-    font-size: 16px;
-    text-align: center;
-    margin: 15px 0;
-    color: #333 !important;
-    font-weight: 600;
+	font-size: 16px;
+	text-align: center;
+	margin: 15px 0;
+	color: #333 !important;
+	font-weight: 600;
 }
+
 .item .desc {
-    color: #a6a6a6;
-    text-align: center;
-    margin-bottom: 0;
+	color: #a6a6a6;
+	text-align: center;
+	margin-bottom: 0;
 }
 
-label span{
-    font-size: 12px;
-    color: #55606e;
+label span {
+	font-size: 12px;
+	color: #55606e;
 }
 
-.form-check-input.st_check{
-    position: static !important;
-    margin: 0 !important;
+.form-check-input.st_check {
+	position: static !important;
+	margin: 0 !important;
 }
 
-.form-check.checkflex{
-    display: flex;
+.form-check.checkflex {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.input_note {
+	font-size: 12px;
+	color: #55606e;
+}
+
+
+
+.upload__img-wrap2.active {
+	overflow-y: scroll;
+	height: 100px;
+	display: flex;
     align-items: center;
-    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.input_note{
-    font-size: 12px;
-    color: #55606e;
+.upload__img-wrap2.active::-webkit-scrollbar {
+	width: 5px;
 }
+
+
+.upload__img-wrap2.active::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+
+.upload__img-wrap2.active::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+
+.upload__img-wrap2.active::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.upload__img-wrap2 .upload__img-box {
+	height: 100%;
+}
+
+.upload__img-wrap2 .upload__img-box .img-bg {
+	height: 100%;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.upload__img-close {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    line-height: 24px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .upload__img-close:after {
+    content: "✖";
+    font-size: 14px;
+    color: white;
+  }
