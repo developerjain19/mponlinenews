@@ -51,6 +51,23 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              Posts
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('view-posts') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Posts</p>
+              </a>
+            </li>
+          </ul>
+        </li>
 
       </ul>
     </nav>
