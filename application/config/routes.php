@@ -7,6 +7,7 @@ $route['default_controller'] = 'HomeController';
 $route['dashboard'] = 'Admin_Dashboard';
 $route['post-format'] = 'POSTController/post_format';
 $route['add-post'] = 'POSTController/addPost';
+$route['view-posts'] = 'POSTController/viewposts';
 $route['categories'] = 'Admin_Dashboard/categories';
 $route['add-category'] = 'Admin_Dashboard/add_category';
 $route['edit-category/(:any)'] = 'Admin_Dashboard/edit_category/$1';

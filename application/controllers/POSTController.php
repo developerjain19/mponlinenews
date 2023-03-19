@@ -31,7 +31,6 @@ class POSTController extends CI_Controller
         $data['subcategories'] = $this->CommonModal->getAllRows('categories');
 
         if (isset($_POST['submit'])) {
-
             $title = $this->input->post('title');
             $title_slug = $this->input->post('title_slug');
             $summary = $this->input->post('summary');
@@ -47,6 +46,7 @@ class POSTController extends CI_Controller
             $lang_id = $this->input->post('lang_id');
             $scheduled_post = $this->input->post('scheduled_post');
             $date_published = $this->input->post('date_published');
+            
 
             $mainimage = imageUpload('image', 'uploads/subcategory/');
             $file_id = imageUpload('file_id', 'uploads/subcategory/');
@@ -87,6 +87,13 @@ class POSTController extends CI_Controller
         $data['postType'] = $type;
 
         $this->load->view('admin/post/add-post', $data);
+    }
+
+    public function viewposts()
+    {
+        $data['title'] = "Post | Admin Mp Online News";
+        $data['posts'] = $this->CommonModal->getAllRows('posts');
+        $this->load->view('admin/post/viewposts', $data);
     }
 
     public function get_subcategory()
